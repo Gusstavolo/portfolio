@@ -6,8 +6,29 @@
   justify-content: center;
 }
 .MainPage {
-  width: 800px;
+  display: flex;
+ flex-direction: column;
+  width: 700px;
   height: 100vh;
   padding: 20px;
   background-color: bisque;
+}
+.SectionPerfil {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+.SectionPerfil-Perfil {
+  width: 330px;
+  height: 330px;
+  background-color: aqua;
+}
+.IconGithub {
+  width: 100px;
+  height: 100px;
+
+  background: url("./components/imgs/gitIcon.png") no-repeat center;
+  background-size: 100%;
+  cursor: pointer;
 }
