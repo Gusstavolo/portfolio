@@ -1,17 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Signika:wght@300..700&family=Staatliches&display=swap');
 * {padding: 0; margin: 0;}
 
 .App {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #272829;
 }
 .MainPage {
   display: flex;
  flex-direction: column;
-  width: 700px;
-  height: 100vh;
+ align-items: center;
+  width: 650px;
+  height: auto;
   padding: 20px;
-  background-color: bisque;
+  background-image: radial-gradient(circle, #FFF6F6,#FFF6F6, rgba(233, 233, 233, 0.897));
+
+  border-radius: 20px;
+  
 }
 .SectionPerfil {
   display: flex;
@@ -20,15 +26,21 @@
   height: auto;
 }
 .SectionPerfil-Perfil {
+  margin-top: 40px;
   width: 330px;
   height: 330px;
   background-color: aqua;
 }
 .IconGithub {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
 
   background: url("./components/imgs/gitIcon.png") no-repeat center;
   background-size: 100%;
   cursor: pointer;
+  transition: 0.6s;
+}
+
+.IconGithub:hover {
+  width: 95px;
 }
