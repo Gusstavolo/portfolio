@@ -26,6 +26,9 @@
   height: auto;
 }
 .SectionPerfil-Perfil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 40px;
   width: 330px;
   height: 330px;

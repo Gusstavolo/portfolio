@@ -1,9 +1,8 @@
 import '../App.css';
 import React from 'react';
 import styled from 'styled-components'
-
-
-
+import { Canvas } from '@react-three/fiber'
+import { Experience } from './Experience';
 const DivSection = styled.div`
   display: flex;
   justify-content: center;
@@ -93,7 +92,12 @@ function Main(){
         <>
         <div className='MainPage'>
             <div className='SectionPerfil'> 
-                <div className='SectionPerfil-Perfil'></div> 
+                <div className='SectionPerfil-Perfil'>
+                        <Canvas>
+                           <Experience />
+                       </Canvas>
+                    
+                    </div> 
                 
             </div>
             <DivSection>
