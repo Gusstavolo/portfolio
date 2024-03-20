@@ -16,6 +16,10 @@ const DivSectionSobre = styled.div`
   width: 100%;
   height: auto;
   background-image: linear-gradient(#272829, #313233);
+  transition: 0.7s;
+    &:hover {
+        transform: rotateX(10deg) rotateY(10deg);
+  }
 `;
 const TestStylePerfil = styled.h1 `
  font-family: "Staatliches", sans-serif;
@@ -41,14 +45,7 @@ const Divider = styled.div `
     margin-bottom: 50px;
     
 `;
-const DividerSobreSUP = styled.div `
 
-    display:flex;
-    width: 100%;
-    
-
-    
-`;
 const DividerSobre = styled.div `
     display:flex;
     justify-content: center;
@@ -62,13 +59,10 @@ const DividerSobreText = styled.div `
     display:flex;
     flex-direction:column;
     width: 80%;  
+ 
     
 `;
-const Div = styled.div `
 
-    height:100%;
-    
-`;
 
 const Sobre =() =>{
     return(
