@@ -37,7 +37,7 @@ export const Experience = () =>{
         <>
     
 
-    <ambientLight intensity={1.9} 
+    <ambientLight intensity={2.2} 
          castShadow/>
     <OrbitControls 
     enableZoom={false} enablePan={false} enableRotate={true} autoRotate 

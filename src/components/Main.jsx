@@ -19,6 +19,8 @@ const DivSectionSobre = styled.div`
   height: auto;
   background-image: linear-gradient(#272829, #313233);
   transition: 0.7s;
+  
+  border-radius: 20px;
     &:hover {
         transform: rotateX(10deg) rotateY(10deg);
   }
@@ -58,6 +60,9 @@ const DividerSobre = styled.div `
     align-items: center;
     flex-direction:column;
     width: 20%;  
+    
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
     background-image: linear-gradient(#080808, #202122,#080808);
     
 `;
@@ -65,6 +70,7 @@ const DividerSobreText = styled.div `
     display:flex;
     flex-direction:column;
     width: 80%;  
+    
  
     
 `;
@@ -75,6 +81,12 @@ const Divglass = styled.div `
     height: auto;
     top: 10%;
     left: 5%;
+`;
+const DivglassTop = styled(Divglass)`
+
+    top: 10%;
+    left: 53%;
+
 `;
 const Testglass = styled.div `
 display: flex;
@@ -94,6 +106,13 @@ backdrop-filter: blur( 5.5px );
 -webkit-backdrop-filter: blur( 5.5px );
 border-radius: 2px;
 
+`;
+const TestglassTop = styled(Testglass)`
+    position:absolute;
+    top: 50px;
+    left: 10%;
+    border-left: none;
+    border-right: 1px solid black;
 `;
 
 
@@ -126,7 +145,18 @@ function Main(){
     return(
         <>
         <div className='MainPage'>
+           <DivglassTop>
+                           <TestglassTop>
+                                
+                           <DivSection>
+                <div className='IconGithub'></div>
+            </DivSection>
+                               
+                           </TestglassTop>
+            </DivglassTop>
             <div className='SectionPerfil'> 
+            
+
                 <div className='SectionPerfil-Perfil'>
                        
                             <Canvas shadowMap
@@ -141,6 +171,8 @@ function Main(){
                           
 
                     </div> 
+                    
+
             </div>
             <Divglass>
                            <Testglass>
@@ -151,9 +183,8 @@ function Main(){
                                 </DivSection>
                            </Testglass>
             </Divglass>
-            <DivSection>
-                <div className='IconGithub'></div>
-            </DivSection>
+            
+            
             <Divider />
             <DivSection>
             <DivSectionSobre>
