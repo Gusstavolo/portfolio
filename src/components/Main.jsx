@@ -17,8 +17,10 @@ const DivSectionSobre = styled.div`
   justify-content: center;
   width: 100%;
   height: auto;
-  background-image: linear-gradient(#272829, #313233);
+  background-image: linear-gradient(#272829, #313233,#1d1e1f);
   transition: 0.7s;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+
   
   border-radius: 20px;
     &:hover {
@@ -69,7 +71,11 @@ const DividerSobre = styled.div `
 const DividerSobreText = styled.div `
     display:flex;
     flex-direction:column;
+    justify-content:center;
+    align-items:center;
     width: 80%;  
+   
+   border-radius: 30px;
     
  
     
@@ -114,7 +120,17 @@ const TestglassTop = styled(Testglass)`
     border-left: none;
     border-right: 1px solid black;
 `;
+const TxtSobre = styled.h1 `
 
+ font-family: "Staatliches", sans-serif;
+  font-weight: 10;
+  text-align: justify;
+  font-style: normal;
+ 
+  color: #FFF6F6;
+  font-size: 2.2rem;
+  padding:20px;
+`;
 
 
 const Sobre =() =>{
@@ -146,14 +162,15 @@ function Main(){
         <>
         <div className='MainPage'>
            <DivglassTop>
-                           <TestglassTop>
+                 <TestglassTop>
                                 
                            <DivSection>
-                <div className='IconGithub'></div>
-            </DivSection>
+                                 <div className='IconGithub'></div>
+                                 <div className='IconLike'></div>
+                          </DivSection>
                                
-                           </TestglassTop>
-            </DivglassTop>
+                    </TestglassTop>
+              </DivglassTop>
             <div className='SectionPerfil'> 
             
 
@@ -163,9 +180,7 @@ function Main(){
                             >
                             <Circle enableRotate={false} />
                             <PerspectiveCamera makeDefault fov={65} near={0.5} far={100} position={[0, 0, 0.78]} />
-                            
-                            
-                            
+
                             <Experience />
                            </Canvas>
                           
@@ -193,7 +208,10 @@ function Main(){
                     <Sobre></Sobre>
                 </DividerSobre>
                 <DividerSobreText>
-
+                   <TxtSobre>
+                   Estudante de Engenharia de Software dedicado ao aprendizado contínuo e ao aprimoramento de habilidades em desenvolvimento de software.
+                   atualmente focado em tecnologias front-end.
+                   </TxtSobre>
                 </DividerSobreText>
                 
             </DivSectionSobre>

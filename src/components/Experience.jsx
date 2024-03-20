@@ -36,8 +36,21 @@ export const Experience = () =>{
    return (
         <>
     
-
-    <ambientLight intensity={2.2} 
+    <pointLight 
+      position={[0.33, 0, 0.2]}
+     intensity={0.05}
+     castShadow
+     color="white"
+    />
+      <pointLight 
+     position={[-0.33, 0, 0]}
+     intensity={0.18}
+     castShadow
+     color="red"
+    
+    />
+    
+    <ambientLight intensity={0.3} 
          castShadow/>
     <OrbitControls 
     enableZoom={false} enablePan={false} enableRotate={true} autoRotate 
@@ -46,18 +59,8 @@ export const Experience = () =>{
     minAzimuthAngle={-Math.PI / 6}
   maxAzimuthAngle={Math.PI / 6}
    />
-
-      <directionalLight
-        
-        position={[0, 0, 2]}
-        intensity={1}
-        castShadow
-        shadow={{
-          
-          
-        }}
-        
-      />
+      
+     
 
 
         
