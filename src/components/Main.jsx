@@ -1,8 +1,11 @@
+import { PerspectiveCamera } from '@react-three/drei'
 import '../App.css';
 import React from 'react';
 import styled from 'styled-components'
 import { Canvas } from '@react-three/fiber'
 import { Experience } from './Experience';
+import { OrthographicCamera, OrbitControls, Cylinder } from "@react-three/drei";
+
 const DivSection = styled.div`
   display: flex;
   justify-content: center;
@@ -21,13 +24,17 @@ const DivSectionSobre = styled.div`
   }
 `;
 const TestStylePerfil = styled.h1 `
+ position: relative;
+left: -20px;
  font-family: "Staatliches", sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #000000;
   font-size: 3rem;
+  
 `;
 const TestStylePerfilSobre = styled.h1 `
+
  font-family: "Staatliches", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -61,6 +68,32 @@ const DividerSobreText = styled.div `
  
     
 `;
+const Divglass = styled.div `
+   
+    position: absolute;
+    width: 380px;
+    height: 380px;
+`;
+const Testglass = styled.div `
+display: flex;
+ position: absolute;
+ justify-content: center;
+ align-items: center;
+  top: 90%;
+  left: 50%;
+  width: 400px;
+  transform: translate3d(-50%, -50%, 0);
+  border-left: 1px solid black;
+  padding-left: 40px;
+  user-select: none;
+  background: rgba( 255, 255, 255, 0 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px );
+border-radius: 2px;
+
+`;
+
 
 
 const Sobre =() =>{
@@ -93,18 +126,34 @@ function Main(){
         <div className='MainPage'>
             <div className='SectionPerfil'> 
                 <div className='SectionPerfil-Perfil'>
-                        <Canvas>
-                           <Experience />
-                       </Canvas>
-                    
+                       
+                            <Canvas shadowMap
+                            >
+                             
+                            <PerspectiveCamera makeDefault
+                            fov={65}
+                            near={0.5}
+                            far={100}
+                            position={[0, 0, 0.78]}
+                            />
+                            
+                            
+                            
+                            <Experience />
+                           </Canvas>
+                           <Divglass>
+                           <Testglass>
+                                <DivSection>
+                                    <TestStylePerfil>
+                                        Gustavo Oliveira
+                                    </TestStylePerfil>
+                                </DivSection>
+                           </Testglass>
+                           </Divglass>
+
                     </div> 
-                
             </div>
-            <DivSection>
-                <TestStylePerfil>
-                    Gustavo Oliveira
-                </TestStylePerfil>
-            </DivSection>
+            
             <DivSection>
                 <div className='IconGithub'></div>
             </DivSection>
