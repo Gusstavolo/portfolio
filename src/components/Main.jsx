@@ -70,16 +70,18 @@ const DividerSobreText = styled.div `
 `;
 const Divglass = styled.div `
    
-    position: absolute;
+    position: relative;
     width: 380px;
-    height: 380px;
+    height: auto;
+    top: 10%;
+    left: 5%;
 `;
 const Testglass = styled.div `
 display: flex;
- position: absolute;
+ 
  justify-content: center;
  align-items: center;
-  top: 90%;
+  top: 20%;
   left: 50%;
   width: 400px;
   transform: translate3d(-50%, -50%, 0);
@@ -129,7 +131,8 @@ function Main(){
                        
                             <Canvas shadowMap
                             >
-                             
+                             <OrbitControls enableZoom={false} enablePan={false} enableRotate={true} autoRotate autoRotateSpeed={0.05} makeDefault minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} />
+
                             <PerspectiveCamera makeDefault
                             fov={65}
                             near={0.5}
@@ -139,9 +142,14 @@ function Main(){
                             
                             
                             
+                            
                             <Experience />
                            </Canvas>
-                           <Divglass>
+                          
+
+                    </div> 
+            </div>
+            <Divglass>
                            <Testglass>
                                 <DivSection>
                                     <TestStylePerfil>
@@ -149,11 +157,7 @@ function Main(){
                                     </TestStylePerfil>
                                 </DivSection>
                            </Testglass>
-                           </Divglass>
-
-                    </div> 
-            </div>
-            
+            </Divglass>
             <DivSection>
                 <div className='IconGithub'></div>
             </DivSection>
