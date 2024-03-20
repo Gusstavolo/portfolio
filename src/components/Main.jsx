@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Canvas } from '@react-three/fiber'
 import { Experience } from './Experience';
 import { OrthographicCamera, OrbitControls, Cylinder } from "@react-three/drei";
-
+import { MeFor3d, Circle } from "./MeFor3d"
 const DivSection = styled.div`
   display: flex;
   justify-content: center;
@@ -131,15 +131,8 @@ function Main(){
                        
                             <Canvas shadowMap
                             >
-                             <OrbitControls enableZoom={false} enablePan={false} enableRotate={true} autoRotate autoRotateSpeed={0.05} makeDefault minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} />
-
-                            <PerspectiveCamera makeDefault
-                            fov={65}
-                            near={0.5}
-                            far={100}
-                            position={[0, 0, 0.78]}
-                            />
-                            
+                            <Circle enableRotate={false} />
+                            <PerspectiveCamera makeDefault fov={65} near={0.5} far={100} position={[0, 0, 0.78]} />
                             
                             
                             
