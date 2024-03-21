@@ -3,7 +3,7 @@ import '../App.css';
 import React, { useRef } from 'react';
 import styled from 'styled-components'
 import { Canvas } from '@react-three/fiber'
-import { Experience } from './Experience';
+import { Experience } from './Experience.tsx';
 
 import { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
