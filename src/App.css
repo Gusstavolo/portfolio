@@ -116,7 +116,7 @@
   background:url("./components/imgs/python.png");
   background-size: 100%;
 }
-/*
+
 @media (width < 1085px) {
  .MainPage{
   scale: 0.8;
@@ -126,4 +126,4 @@
   .MainPage{
    scale: 0.9;
   }
- }*/
+ }
