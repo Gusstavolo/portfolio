@@ -79,3 +79,14 @@
 .IconLike:hover {
   width: 75px;
 }
+
+
+
+.imgA{
+  background:url("./components/imgs/chgif.gif");
+  background-size: 100%;
+}
+.imgB{
+  background:url("./components/imgs/iag.gif");
+  background-size: 100%;
+}

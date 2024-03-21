@@ -208,6 +208,67 @@ function FadeInElement({ children }) {
     );
   }
 
+  const DivSecProjects = styled.div`
+ display: flex;
+  justify-content: center;
+  margin-top:30px;
+  width: 100%;
+  height: auto;
+  background-image: linear-gradient(#272829, #313233,#1d1e1f);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.521);
+  border-radius: 20px;
+  
+`;
+ const SecImgProjects = styled.div`
+  width: 50%;
+
+`;
+const ImgProjects = styled.div`
+  width:100%;
+  height:150px;
+  border-radius:20px;
+`;
+const SecTxtProjects = styled.div`
+  width:50%;
+ 
+`;
+
+const SecProjects = () => {
+  const list = [
+    "./imgs/chgif.gif",
+  ]
+  const a = 'url(./imgs/chgif.gif)'
+
+  
+  return (
+    <> 
+    <DivSecProjects>
+      <SecImgProjects>
+        <ImgProjects className='imgA'  />
+        
+      </SecImgProjects>
+      <SecTxtProjects>
+          
+        </SecTxtProjects>
+    </DivSecProjects>
+    <DivSecProjects>
+      <SecImgProjects>
+        <ImgProjects className='imgB'  />
+        
+      </SecImgProjects>
+      <SecTxtProjects>
+          
+        </SecTxtProjects>
+    </DivSecProjects>
+    </>
+  )
+}
+
+
+
+
+
+
 function Main(){
     
         const [isVisible, setIsVisible] = useState(false);
@@ -233,16 +294,15 @@ function Main(){
            <DivglassTop>
                  <TestglassTop>
                                 
-                           <DivSection>
-                                 <div className='IconGithub'></div>
-                                 <div className='IconLike'></div>
+                           <DivSection>                      
+                                 <a href='https://github.com/Gusstavolo' className='IconGithub'></a>
+                                 <a href='https://www.linkedin.com/in/gusstavolo' className='IconLike'></a>
                           </DivSection>
                                
                     </TestglassTop>
               </DivglassTop>
             <div className='SectionPerfil'> 
             
-
                 <div className='SectionPerfil-Perfil' ref={ref}>
                 {isVisible ? (
                        
@@ -297,18 +357,8 @@ function Main(){
            
                 <DivSectionColumn  >
                     <ProjeTxt>Projetos</ProjeTxt>
-                    <DivSectionSobre>
-
-                            <DividerSobre>
-                                
-                            </DividerSobre>
-                            <DividerSobreText>
-                            <TxtSobre>
-
-                            </TxtSobre>
-                            </DividerSobreText>
-
-                    </DivSectionSobre>
+                    <SecProjects></SecProjects>
+                   
 
                 </DivSectionColumn>
             

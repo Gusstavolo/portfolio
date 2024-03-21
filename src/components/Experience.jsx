@@ -58,12 +58,12 @@ export const Experience = () =>{
     
     <ambientLight intensity={0.3} 
          castShadow/>
+        
     <OrbitControls 
-    enableZoom={false} enablePan={false} enableRotate={false} autoRotate 
-    autoRotateSpeed={0.05} makeDefault 
+    enableZoom={false} enablePan={false} enableRotate={false} makeDefault 
     minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2}
     minAzimuthAngle={-Math.PI / 6}
-  maxAzimuthAngle={Math.PI / 6}
+   maxAzimuthAngle={Math.PI / 6}
    />
       
      <Me3dT 
