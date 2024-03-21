@@ -9,36 +9,27 @@ import { useEffect } from "react";
 
 
 export const Experience = () =>{
-  const mesh = useRef()
-  const [hovered, setHovered] = useState(false)
-  const initialRotation = [0, 0, 0]
-  const targetRotation = hovered ? [0, Math.PI / 2, 0] : initialRotation
+  const orbitControlsRef = useRef();
+  const [isHovered, setIsHovered] = useState(false);
+  const [autoRotate, setAutoRotate] = useState(false);
+  const initialPosition = [0, 0, 5]; // Posição inicial da câmera
+  const [resetCamera, setResetCamera] = useState(false);
 
-  const handlePointerOver = () => {
-    setHovered(true)
-   
-  }
-
-  const handlePointerOut = () => {
-    setHovered(false)
-   
-  }
-
-  function Test(){
-    mesh.current.rotation.x = targetRotation
-      mesh.current.rotation.y = 0
-      mesh.current.rotation.z = 0
-  }
-  useFrame(() => {
-    if (mesh.current ) {
-      
-      mesh.current.rotation.x = mesh.rotation.x
-      mesh.current.rotation.y = 0
-      mesh.current.rotation.z = 0
-
-   
+  useEffect(() => {
+    if (!isHovered) {
+      const timer = setTimeout(() => {
+        setResetCamera(true); // Ativa o reset da câmera
+      }, 1000); // Tempo de transição suave em milissegundos
+      return () => clearTimeout(timer);
     }
-  })
+  }, [isHovered]);
+
+  useEffect(() => {
+    if (resetCamera) {
+      orbitControlsRef.current.reset(); // Reseta a posição da câmera
+      setResetCamera(false); // Desativa o reset da câmera
+    }
+  }, [resetCamera]);
    return (
         <>
     
@@ -60,18 +51,31 @@ export const Experience = () =>{
          castShadow/>
         
     <OrbitControls 
-    enableZoom={false} enablePan={false} enableRotate={false} makeDefault 
+ref={orbitControlsRef}
+        autoRotate={autoRotate}
+        enableRotate={!isHovered}
+        enableDamping
+        dampingFactor={0.1}
+        target={[0, 0, 0]} // Alvo da câmera
+        {...(isHovered ? { enablePan: false, enableZoom: false } : {})} // Desabilita pan e zoom quando hover
+        initialPosition={initialPosition} // Define a posição inicial da câmera
+      // Define a posição da câmera
+    enableZoom={false} enablePan={false}  makeDefault 
     minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2}
-    minAzimuthAngle={-Math.PI / 6}
-   maxAzimuthAngle={Math.PI / 6}
+    minAzimuthAngle={-Math.PI / 8}
+     maxAzimuthAngle={Math.PI / 8}
    />
       
      <Me3dT 
-     ref={mesh}
-     onPointerOver={handlePointerOver}
-     onPointerOut={handlePointerOut}
-     
-     rotation={hovered ? [0,Math.PI / 2 * 0.3,0] : [0,0,0]}
+    onPointerOver={() => {
+      setIsHovered(true);
+      setAutoRotate(true);
+    }}
+    onPointerOut={() => {
+      setIsHovered(false);
+      setAutoRotate(false);
+
+    }}
      />
       
         
