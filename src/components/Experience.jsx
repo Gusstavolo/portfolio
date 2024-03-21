@@ -1,38 +1,44 @@
-import { MeFor3d, Circle } from "./MeFor3d"
+import { Me3dT} from "./MeFor3d"
 import { OrthographicCamera, OrbitControls, Cylinder } from "@react-three/drei";
-import { SoftShadows } from "@react-three/drei"
 import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
+import { useLoader } from '@react-three/fiber';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { useEffect } from "react";
+
 
 
 export const Experience = () =>{
-    const orbitControlsRef = useRef();
+  const mesh = useRef()
+  const [hovered, setHovered] = useState(false)
+  const initialRotation = [0, 0, 0]
+  const targetRotation = hovered ? [0, Math.PI / 2, 0] : initialRotation
 
-    const handleCameraChange = () => {
-      const { current: orbitControls } = orbitControlsRef;
-      const { current: camera } = orbitControls.camera;
-  
-      // Define os limites da câmera
-      const minDistance = 2; // Distância mínima da câmera ao ponto de foco
-      const maxDistance = 10; // Distância máxima da câmera ao ponto de foco
-      const maxPolarAngle = Math.PI / 2; // Ângulo polar máximo (evita que a câmera passe por baixo da cena)
-  
-      // Verifica se a distância da câmera ao ponto de foco ultrapassou os limites
-      if (camera.position.length() < minDistance) {
-        camera.position.setLength(minDistance);
-      } else if (camera.position.length() > maxDistance) {
-        camera.position.setLength(maxDistance);
-      }
-  
-      // Verifica se o ângulo polar ultrapassou o limite máximo
-      if (camera.position.y < 0) {
-        camera.position.y = 0;
-        camera.lookAt(0, 0, 0);
-      } else if (camera.position.y > maxPolarAngle) {
-        camera.position.y = maxPolarAngle;
-        camera.lookAt(0, 0, 0);
-      }
-    };
+  const handlePointerOver = () => {
+    setHovered(true)
+   
+  }
+
+  const handlePointerOut = () => {
+    setHovered(false)
+   
+  }
+
+  function Test(){
+    mesh.current.rotation.x = targetRotation
+      mesh.current.rotation.y = 0
+      mesh.current.rotation.z = 0
+  }
+  useFrame(() => {
+    if (mesh.current ) {
+      
+      mesh.current.rotation.x = mesh.rotation.x
+      mesh.current.rotation.y = 0
+      mesh.current.rotation.z = 0
+
+   
+    }
+  })
    return (
         <>
     
@@ -53,19 +59,21 @@ export const Experience = () =>{
     <ambientLight intensity={0.3} 
          castShadow/>
     <OrbitControls 
-    enableZoom={false} enablePan={false} enableRotate={true} autoRotate 
+    enableZoom={false} enablePan={false} enableRotate={false} autoRotate 
     autoRotateSpeed={0.05} makeDefault 
     minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2}
     minAzimuthAngle={-Math.PI / 6}
   maxAzimuthAngle={Math.PI / 6}
    />
       
+     <Me3dT 
+     ref={mesh}
+     onPointerOver={handlePointerOver}
+     onPointerOut={handlePointerOut}
      
-
-
-        
-         <MeFor3d
-         />
+     rotation={hovered ? [0,Math.PI / 2 * 0.2,0] : [0,0,0]}
+     />
+      
         
         </>
     )

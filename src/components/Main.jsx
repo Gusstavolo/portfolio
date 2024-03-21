@@ -1,11 +1,14 @@
 import { PerspectiveCamera } from '@react-three/drei'
 import '../App.css';
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components'
 import { Canvas } from '@react-three/fiber'
 import { Experience } from './Experience';
-import { OrthographicCamera, OrbitControls, Cylinder } from "@react-three/drei";
-import { MeFor3d, Circle } from "./MeFor3d"
+
+import { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { CSSTransition } from 'react-transition-group';
+
 const DivSection = styled.div`
   display: flex;
   justify-content: center;
@@ -19,7 +22,7 @@ const DivSectionSobre = styled.div`
   height: auto;
   background-image: linear-gradient(#272829, #313233,#1d1e1f);
   transition: 0.7s;
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.521);
 
   
   border-radius: 20px;
@@ -107,7 +110,7 @@ display: flex;
   padding-left: 40px;
   user-select: none;
   background: rgba( 255, 255, 255, 0 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.521);
 backdrop-filter: blur( 5.5px );
 -webkit-backdrop-filter: blur( 5.5px );
 border-radius: 2px;
@@ -132,6 +135,31 @@ const TxtSobre = styled.h1 `
   padding:20px;
 `;
 
+const ProjeTxt = styled.h1 `
+display: flex;
+justify-content:center;
+ font-family: "Staatliches", sans-serif;
+  font-weight: 600;
+  text-align: justify;
+  font-style: normal;
+ 
+  color: #000000;
+  font-size: 2.2rem;
+  
+  background: rgba( 255, 255, 255, 0 );
+  box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.521);
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px );
+border-radius: 20px;
+padding: 15px;
+`;
+const DivSectionColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  
+`;
 
 const Sobre =() =>{
     return(
@@ -157,7 +185,48 @@ const Sobre =() =>{
         
     )
 }
+
+function FadeInElement({ children }) {
+    const { ref, inView } = useInView({
+        threshold: 0, // Detecta quando pelo menos uma parte do elemento está visível
+        root: null, // Usa o viewport como a área de visibilidade
+        rootMargin: '0px' // Sem margem adicional
+      });
+    console.log('Ref:', ref);
+  console.log('Elemento visível:', inView);
+    return (
+      <CSSTransition
+        in={inView}
+        timeout={1000}
+        classNames="fade-in"
+        unmountOnExit
+      >
+        <div ref={ref} className="fade-in-element">
+          {children}
+        </div>
+      </CSSTransition>
+    );
+  }
+
 function Main(){
+    
+        const [isVisible, setIsVisible] = useState(false);
+        const { ref, inView } = useInView();
+     
+        // Função para carregar conteúdo adicional
+        const loadContent = () => {
+          // Simulação de carregamento de conteúdo
+          setTimeout(() => {
+            setIsVisible(true);
+          }, 500); // Tempo de simulação: 2 segundos
+        };
+      
+        // Carregar o conteúdo quando o elemento estiver visível na viewport
+        if (inView && !isVisible) {
+          loadContent();
+        }
+      
+      
     return(
         <>
         <div className='MainPage'>
@@ -174,16 +243,21 @@ function Main(){
             <div className='SectionPerfil'> 
             
 
-                <div className='SectionPerfil-Perfil'>
+                <div className='SectionPerfil-Perfil' ref={ref}>
+                {isVisible ? (
                        
-                            <Canvas shadowMap
+                            <Canvas shadowMap async
                             >
-                            <Circle enableRotate={false} />
+                            
                             <PerspectiveCamera makeDefault fov={65} near={0.5} far={100} position={[0, 0, 0.78]} />
 
                             <Experience />
                            </Canvas>
-                          
+                            ) : (<div>
+                                {/* Indicador de carregamento */}
+                                Carregando...
+                              </div>
+                            )}
 
                     </div> 
                     
@@ -201,7 +275,8 @@ function Main(){
             
             
             <Divider />
-            <DivSection>
+            <DivSection >
+             
             <DivSectionSobre>
 
                 <DividerSobre>
@@ -218,13 +293,31 @@ function Main(){
             
             </DivSection>
             
+            <Divider />
+           
+                <DivSectionColumn  >
+                    <ProjeTxt>Projetos</ProjeTxt>
+                    <DivSectionSobre>
 
+                            <DividerSobre>
+                                
+                            </DividerSobre>
+                            <DividerSobreText>
+                            <TxtSobre>
 
+                            </TxtSobre>
+                            </DividerSobreText>
 
+                    </DivSectionSobre>
+
+                </DivSectionColumn>
+            
         </div>
       
         </>
     )
     
 }
+
+
 export default Main;
