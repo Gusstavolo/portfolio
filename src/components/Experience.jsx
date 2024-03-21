@@ -12,7 +12,7 @@ export const Experience = () =>{
   const orbitControlsRef = useRef();
   const [isHovered, setIsHovered] = useState(false);
   const [autoRotate, setAutoRotate] = useState(false);
-  const initialPosition = [0, 0, 5]; // Posição inicial da câmera
+  const initialPosition = [0, 0, 0]; // Posição inicial da câmera
   const [resetCamera, setResetCamera] = useState(false);
 
   useEffect(() => {
