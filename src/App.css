@@ -88,7 +88,18 @@
 }
 
 
-
+.IconJs {
+  background:url("./components/imgs/icons8-javascript-240.png");
+  background-size: 100%;
+}
+.IconCs {
+  background:url("./components/imgs/icons8-c-sharp-logo-480.png");
+  background-size: 100%;
+}
+.Iconpython {
+  background:url("./components/imgs/icons8-python-480.png");
+  background-size: 100%;
+}
 .imgA{
   background:url("./components/imgs/chgif.gif");
   background-size: 100%;
@@ -99,5 +110,9 @@
 }
 .imgC{
   background:url("./components/imgs/gmiag.gif");
+  background-size: 100%;
+}
+.imgD{
+  background:url("./components/imgs/python.png");
   background-size: 100%;
 }

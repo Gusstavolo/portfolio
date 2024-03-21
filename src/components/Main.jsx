@@ -235,7 +235,7 @@ const SecTxtProjects = styled.div`
  
 `;
 const TxttoP = styled.h2`
-
+position: absolute;
 font-family: "Staatliches", sans-serif;
   font-weight: 200;
   text-align: justify;
@@ -246,6 +246,7 @@ font-family: "Staatliches", sans-serif;
   font-size: 1.2rem;
   `;
   const TxttopB = styled(TxttoP)`
+  position: absolute;
   padding: 0;
   font-size: 1rem;
   padding-top: 3px;
@@ -254,8 +255,8 @@ font-family: "Staatliches", sans-serif;
 
   const ButtonsPdiv = styled.div `
   display: flex;
-  
-  
+  position:relative;
+  left:80px;
   gap:5px;
   
   `;
@@ -270,6 +271,21 @@ font-family: "Staatliches", sans-serif;
     
   
   `;
+   const Picon = styled.div`
+   position:relative;
+   width: 35px;
+   height: 35px;
+   border-radius: 10px;
+  left: 30%;
+  top: 5%;
+ 
+ `;
+ const DividerTextProj = styled.div `
+  width:20px;
+  margin-top:20px;
+ `;
+
+
 const SecProjects = () => {
   const list = [
     "./imgs/chgif.gif",
@@ -285,11 +301,18 @@ const SecProjects = () => {
         
       </SecImgProjects>
       <SecTxtProjects>
-          <TxttoP>OOOOOO</TxttoP>
-
+          <TxttoP>Projeto para o challenge alura
+            <DividerTextProj />
+         
+            Codificador simples
+          </TxttoP>
+          
+           
+       
           <ButtonsPdiv>
             <ButtonDeploy onClick={() => window.location.href = "https://challenge-alura-blond.vercel.app/" }><TxttopB>Deploy</TxttopB></ButtonDeploy>
             <ButtonDeploy onClick={() => window.location.href = "https://github.com/Gusstavolo/ChallengeAlura" }><TxttopB>GitHub</TxttopB></ButtonDeploy>
+            <Picon className='IconJs' />
           </ButtonsPdiv>
         </SecTxtProjects>
     </DivSecProjects>
@@ -299,11 +322,15 @@ const SecProjects = () => {
         
       </SecImgProjects>
         <SecTxtProjects>
-        <TxttoP>OOOOOO</TxttoP>
+        <TxttoP>proteto gamePerceptron
+          <DividerTextProj />
+          conceitos de redes neurais perceptron
+        </TxttoP>
 
           <ButtonsPdiv>
             <ButtonDeploy onClick={() => window.location.href = "https://iaprojectgame.vercel.app/" }><TxttopB>Deploy</TxttopB></ButtonDeploy>
             <ButtonDeploy onClick={() => window.location.href = "https://github.com/Gusstavolo/iaprojectgame" }><TxttopB>GitHub</TxttopB></ButtonDeploy>
+            <Picon className='IconJs' />
           </ButtonsPdiv>
         </SecTxtProjects>
     </DivSecProjects>
@@ -314,10 +341,32 @@ const SecProjects = () => {
         
       </SecImgProjects>
         <SecTxtProjects>
-        <TxttoP>OOOOOO</TxttoP>
-
+         <TxttoP>Game usando unity</TxttoP>
+            <ButtonsPdiv>
+            <ButtonDeploy ><TxttopB>Deploy</TxttopB></ButtonDeploy>
+            <ButtonDeploy ><TxttopB>GitHub</TxttopB></ButtonDeploy>
+              <Picon className='IconCs' />
+            </ButtonsPdiv>
           
         </SecTxtProjects>
+        
+    </DivSecProjects>
+    <DivSecProjects>
+      <SecImgProjects>
+        <ImgProjects className='imgD'  />
+        
+      </SecImgProjects>
+        <SecTxtProjects>
+         <TxttoP>BlackJack em python</TxttoP>
+            <ButtonsPdiv>
+            <ButtonDeploy onClick={() => window.location.href = "https://codesandbox.io/p/devbox/amazing-dream-gp7xzl?file=%2Fmain.py%3A455%2C26&layout=%257B%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522rootPanelGroup%2522%253A%257B%2522direction%2522%253A%2522horizontal%2522%252C%2522contentType%2522%253A%2522UNKNOWN%2522%252C%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522id%2522%253A%2522ROOT_LAYOUT%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522UNKNOWN%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522clu1e4qsq0006356iejzdp90m%2522%252C%2522sizes%2522%253A%255B61.24343257443083%252C38.75656742556917%255D%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522EDITOR%2522%252C%2522direction%2522%253A%2522horizontal%2522%252C%2522id%2522%253A%2522EDITOR%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522EDITOR%2522%252C%2522id%2522%253A%2522clu1e4qsp0002356i3ml2hn83%2522%257D%255D%257D%252C%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522SHELLS%2522%252C%2522direction%2522%253A%2522horizontal%2522%252C%2522id%2522%253A%2522SHELLS%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522SHELLS%2522%252C%2522id%2522%253A%2522clu1e4qsp0004356i84tv58nj%2522%257D%255D%252C%2522sizes%2522%253A%255B100%255D%257D%255D%257D%252C%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522DEVTOOLS%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522DEVTOOLS%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522DEVTOOLS%2522%252C%2522id%2522%253A%2522clu1e4qsp0005356if1a3xx4z%2522%257D%255D%252C%2522sizes%2522%253A%255B100%255D%257D%255D%252C%2522sizes%2522%253A%255B50%252C50%255D%257D%252C%2522tabbedPanels%2522%253A%257B%2522clu1e4qsp0002356i3ml2hn83%2522%253A%257B%2522id%2522%253A%2522clu1e4qsp0002356i3ml2hn83%2522%252C%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522clu1e5nyx003n356i60pm2rl6%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522FILE%2522%252C%2522initialSelections%2522%253A%255B%257B%2522startLineNumber%2522%253A455%252C%2522startColumn%2522%253A26%252C%2522endLineNumber%2522%253A455%252C%2522endColumn%2522%253A26%257D%255D%252C%2522filepath%2522%253A%2522%252Fmain.py%2522%252C%2522state%2522%253A%2522IDLE%2522%257D%255D%252C%2522activeTabId%2522%253A%2522clu1e5nyx003n356i60pm2rl6%2522%257D%252C%2522clu1e4qsp0005356if1a3xx4z%2522%253A%257B%2522id%2522%253A%2522clu1e4qsp0005356if1a3xx4z%2522%252C%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522clu1e4qsp0003356iq7eayyjy%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522TASK_LOG%2522%252C%2522taskId%2522%253A%2522start%2522%257D%255D%252C%2522activeTabId%2522%253A%2522clu1e4qsp0003356iq7eayyjy%2522%257D%252C%2522clu1e4qsp0004356i84tv58nj%2522%253A%257B%2522id%2522%253A%2522clu1e4qsp0004356i84tv58nj%2522%252C%2522tabs%2522%253A%255B%255D%257D%257D%252C%2522showDevtools%2522%253Atrue%252C%2522showShells%2522%253Atrue%252C%2522showSidebar%2522%253Atrue%252C%2522sidebarPanelSize%2522%253A15%257D" } ><TxttopB>Deploy</TxttopB></ButtonDeploy>
+            <ButtonDeploy onClick={() => window.location.href = "https://github.com/IFSERTAOPE-FLO/projeto-final-alp2021-blackjack-21"}><TxttopB>GitHub</TxttopB></ButtonDeploy>
+            
+              <Picon className='Iconpython' />
+            </ButtonsPdiv>
+          
+        </SecTxtProjects>
+        
     </DivSecProjects>
     </>
   )
