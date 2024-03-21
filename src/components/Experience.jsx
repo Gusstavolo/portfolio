@@ -56,7 +56,7 @@ export const Experience = () =>{
     
     />
     
-    <ambientLight intensity={0.3} 
+    <ambientLight intensity={0.2} 
          castShadow/>
         
     <OrbitControls 
@@ -71,7 +71,7 @@ export const Experience = () =>{
      onPointerOver={handlePointerOver}
      onPointerOut={handlePointerOut}
      
-     rotation={hovered ? [0,Math.PI / 2 * 0.2,0] : [0,0,0]}
+     rotation={hovered ? [0,Math.PI / 2 * 0.3,0] : [0,0,0]}
      />
       
         

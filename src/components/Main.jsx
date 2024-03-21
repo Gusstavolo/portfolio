@@ -229,10 +229,47 @@ const ImgProjects = styled.div`
   border-radius:20px;
 `;
 const SecTxtProjects = styled.div`
+  display:flex;
   width:50%;
+  height:auto;
  
 `;
+const TxttoP = styled.h2`
 
+font-family: "Staatliches", sans-serif;
+  font-weight: 200;
+  text-align: justify;
+  font-style: normal;
+ 
+  color: #fcfcfc;
+  padding: 13px;
+  font-size: 1.2rem;
+  `;
+  const TxttopB = styled(TxttoP)`
+  padding: 0;
+  font-size: 1rem;
+  padding-top: 3px;
+  padding-left: 14px;
+  `;
+
+  const ButtonsPdiv = styled.div `
+  display: flex;
+  
+  
+  gap:5px;
+  
+  `;
+  const ButtonDeploy = styled.div`
+    position:relative;
+    width: 70px;
+    height: 25px;
+    border-radius: 10px;
+    top: 80%;
+    background-color: #111111;
+    cursor: pointer;
+    
+  
+  `;
 const SecProjects = () => {
   const list = [
     "./imgs/chgif.gif",
@@ -248,7 +285,12 @@ const SecProjects = () => {
         
       </SecImgProjects>
       <SecTxtProjects>
-          
+          <TxttoP>OOOOOO</TxttoP>
+
+          <ButtonsPdiv>
+            <ButtonDeploy onClick={() => window.location.href = "https://challenge-alura-blond.vercel.app/" }><TxttopB>Deploy</TxttopB></ButtonDeploy>
+            <ButtonDeploy onClick={() => window.location.href = "https://github.com/Gusstavolo/ChallengeAlura" }><TxttopB>GitHub</TxttopB></ButtonDeploy>
+          </ButtonsPdiv>
         </SecTxtProjects>
     </DivSecProjects>
     <DivSecProjects>
@@ -256,7 +298,24 @@ const SecProjects = () => {
         <ImgProjects className='imgB'  />
         
       </SecImgProjects>
-      <SecTxtProjects>
+        <SecTxtProjects>
+        <TxttoP>OOOOOO</TxttoP>
+
+          <ButtonsPdiv>
+            <ButtonDeploy onClick={() => window.location.href = "https://iaprojectgame.vercel.app/" }><TxttopB>Deploy</TxttopB></ButtonDeploy>
+            <ButtonDeploy onClick={() => window.location.href = "https://github.com/Gusstavolo/iaprojectgame" }><TxttopB>GitHub</TxttopB></ButtonDeploy>
+          </ButtonsPdiv>
+        </SecTxtProjects>
+    </DivSecProjects>
+
+    <DivSecProjects>
+      <SecImgProjects>
+        <ImgProjects className='imgC'  />
+        
+      </SecImgProjects>
+        <SecTxtProjects>
+        <TxttoP>OOOOOO</TxttoP>
+
           
         </SecTxtProjects>
     </DivSecProjects>
@@ -279,7 +338,7 @@ function Main(){
           // Simulação de carregamento de conteúdo
           setTimeout(() => {
             setIsVisible(true);
-          }, 500); // Tempo de simulação: 2 segundos
+          }, 2000); // Tempo de simulação: 2 segundos
         };
       
         // Carregar o conteúdo quando o elemento estiver visível na viewport

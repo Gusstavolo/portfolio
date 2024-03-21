@@ -25,7 +25,11 @@
   opacity: 1;
   transition: opacity 1000ms;
 }
-
+@keyframes start {
+  from{opacity: 0;}
+  to{opacity: 1;}
+  
+}
 .MainPage {
   display: flex;
  flex-direction: column;
@@ -35,10 +39,13 @@
   height: auto;
   padding: 20px;
   background-image: radial-gradient(circle, #FFF6F6,#FFF6F6, rgba(233, 233, 233, 0.897));
-
+  animation-name: start;
+  animation-duration: 2s;
   border-radius: 20px;
-  
+  transition: 2s;
 }
+
+
 .SectionPerfil {
   display: flex;
   justify-content: center;
@@ -88,5 +95,9 @@
 }
 .imgB{
   background:url("./components/imgs/iag.gif");
+  background-size: 100%;
+}
+.imgC{
+  background:url("./components/imgs/gmiag.gif");
   background-size: 100%;
 }
