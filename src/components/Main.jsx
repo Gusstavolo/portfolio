@@ -385,9 +385,10 @@ function Main(){
         // Função para carregar conteúdo adicional
         const loadContent = () => {
           // Simulação de carregamento de conteúdo
+          setIsVisible(true);
           setTimeout(() => {
-            setIsVisible(true);
-          }, 2000); // Tempo de simulação: 2 segundos
+            
+          }, 1000); // Tempo de simulação: 2 segundos
         };
       
         // Carregar o conteúdo quando o elemento estiver visível na viewport
@@ -412,7 +413,7 @@ function Main(){
             <div className='SectionPerfil'> 
             
                 <div className='SectionPerfil-Perfil' ref={ref}>
-                {isVisible ? (
+                
                        
                             <Canvas shadowMap async
                             >
@@ -421,11 +422,7 @@ function Main(){
 
                             <Experience />
                            </Canvas>
-                            ) : (<div>
-                                {/* Indicador de carregamento */}
-                                Carregando...
-                              </div>
-                            )}
+                          
 
                     </div> 
                     

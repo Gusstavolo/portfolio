@@ -34,7 +34,7 @@ export const Experience = () =>{
         <>
     
     <pointLight 
-      position={[0.33, 0, 0.2]}
+      position={[0.33, 0, 0]}
      intensity={0.05}
      castShadow
      color="white"
