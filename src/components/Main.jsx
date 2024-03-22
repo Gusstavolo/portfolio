@@ -47,6 +47,9 @@ const TestStylePerfilSobre = styled.h1 `
   font-style: normal;
   color: #FFF6F6;
   font-size: 3.1rem;
+  @media (width < 610px){
+    font-size: 1.9rem;
+}
 `;
 
 const Divider = styled.div `
@@ -90,7 +93,10 @@ const Divglass = styled.div `
     height: auto;
     top: 10%;
     left: 5%;
+ 
+  
 `;
+
 const DivglassTop = styled(Divglass)`
 
     top: 10%;
@@ -115,6 +121,10 @@ backdrop-filter: blur( 5.5px );
 -webkit-backdrop-filter: blur( 5.5px );
 border-radius: 2px;
 
+@media (width < 610px){
+  scale: 0.6;
+}
+
 `;
 const TestglassTop = styled(Testglass)`
     position:absolute;
@@ -122,6 +132,7 @@ const TestglassTop = styled(Testglass)`
     left: 4%;
     border-left: none;
     border-right: 1px solid black;
+ 
 `;
 const TxtSobre = styled.h1 `
 
@@ -133,6 +144,9 @@ const TxtSobre = styled.h1 `
   color: #FFF6F6;
   font-size: 2.2rem;
   padding:20px;
+  @media (width < 610px){
+    font-size: 1.4rem;
+}
 `;
 
 const ProjeTxt = styled.h1 `
@@ -227,6 +241,9 @@ const ImgProjects = styled.div`
   width:100%;
   height:150px;
   border-radius:20px;
+  @media (width < 610px){
+    height:89px;
+}
 `;
 const SecTxtProjects = styled.div`
   display:flex;
@@ -244,6 +261,9 @@ font-family: "Staatliches", sans-serif;
   color: #fcfcfc;
   padding: 13px;
   font-size: 1.2rem;
+  @media (width < 610px){
+    font-size: 0.6rem;
+}
   `;
   const TxttopB = styled(TxttoP)`
   position: absolute;
@@ -251,23 +271,32 @@ font-family: "Staatliches", sans-serif;
   font-size: 1rem;
   padding-top: 3px;
   padding-left: 14px;
+  @media (width < 610px){
+    font-size: 0.6rem;
+}
   `;
 
   const ButtonsPdiv = styled.div `
   display: flex;
   position:relative;
-  left:80px;
+  left:90px;
   gap:5px;
-  
+  @media (width < 610px){
+    left:40px;
+  }
   `;
   const ButtonDeploy = styled.div`
     position:relative;
     width: 70px;
     height: 25px;
     border-radius: 10px;
-    top: 80%;
+    top: 78%;
     background-color: #111111;
     cursor: pointer;
+    @media (width < 610px){
+      width: 50px;
+    height: 17px;
+}
     
   
   `;
@@ -276,8 +305,13 @@ font-family: "Staatliches", sans-serif;
    width: 35px;
    height: 35px;
    border-radius: 10px;
-  left: 30%;
+  left: 20%;
   top: 5%;
+  @media (width < 610px){
+    scale: 0.7;
+    left: 2%;
+      top: 2%;
+}
  
  `;
  const DividerTextProj = styled.div `
