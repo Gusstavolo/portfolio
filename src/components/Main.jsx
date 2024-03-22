@@ -118,8 +118,8 @@ border-radius: 2px;
 `;
 const TestglassTop = styled(Testglass)`
     position:absolute;
-    top: 50px;
-    left: 10%;
+    top: -370px;
+    left: 4%;
     border-left: none;
     border-right: 1px solid black;
 `;
@@ -400,16 +400,7 @@ function Main(){
     return(
         <>
         <div className='MainPage'>
-           <DivglassTop>
-                 <TestglassTop>
-                                
-                           <DivSection>                      
-                                 <a href='https://github.com/Gusstavolo' className='IconGithub'></a>
-                                 <a href='https://www.linkedin.com/in/gusstavolo' className='IconLike'></a>
-                          </DivSection>
-                               
-                    </TestglassTop>
-              </DivglassTop>
+           
             <div className='SectionPerfil'> 
             
                 <div className='SectionPerfil-Perfil' ref={ref}>
@@ -428,6 +419,16 @@ function Main(){
                     
 
             </div>
+            <DivglassTop>
+                 <TestglassTop>
+                                
+                           <DivSection>                      
+                                 <div onClick={() => window.location.href = "https://github.com/Gusstavolo"} className='IconGithub'></div>
+                                 <div onClick={() => window.location.href = "https://www.linkedin.com/in/gusstavolo"}  className='IconLike'></div>
+                          </DivSection>
+                               
+                    </TestglassTop>
+              </DivglassTop>
             <Divglass>
                            <Testglass>
                                 <DivSection>
