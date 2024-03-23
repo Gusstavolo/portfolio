@@ -266,11 +266,10 @@ font-family: "Staatliches", sans-serif;
 }
   `;
   const TxttopB = styled(TxttoP)`
-  position: absolute;
+  
   padding: 0;
   font-size: 1rem;
-  padding-top: 3px;
-  padding-left: 14px;
+  
   @media (width < 610px){
     font-size: 0.6rem;
 }
@@ -279,23 +278,32 @@ font-family: "Staatliches", sans-serif;
   const ButtonsPdiv = styled.div `
   display: flex;
   position:relative;
-  left:90px;
+  
+ 
   gap:5px;
   @media (width < 610px){
     left:40px;
   }
   `;
   const ButtonDeploy = styled.div`
+    
+    display:flex;
     position:relative;
+    justify-content:center;
+    align-items: center;
+    
     width: 70px;
     height: 25px;
     border-radius: 10px;
     top: 78%;
+    left: 46%;
     background-color: #111111;
     cursor: pointer;
     @media (width < 610px){
       width: 50px;
     height: 17px;
+    top: 78%;
+    left: 1%;
 }
     
   
@@ -305,8 +313,8 @@ font-family: "Staatliches", sans-serif;
    width: 35px;
    height: 35px;
    border-radius: 10px;
-  left: 20%;
-  top: 5%;
+  left: 70%;
+  top: 8%;
   @media (width < 610px){
     scale: 0.7;
     left: 2%;
