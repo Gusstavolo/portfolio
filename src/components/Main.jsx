@@ -339,6 +339,30 @@ const SecProjects = () => {
     <> 
     <DivSecProjects>
       <SecImgProjects>
+        <ImgProjects className='imgAA'  />
+        
+      </SecImgProjects>
+      <SecTxtProjects>
+          <TxttoP>Projeto BlackDealer
+            <DividerTextProj />
+         
+            Jogo 3D de BlackJack
+          </TxttoP>
+          
+           
+       
+          <ButtonsPdiv>
+            <ButtonDeploy onClick={() => window.location.href = "https://blackjackinreact.vercel.app/" }><TxttopB>Deploy</TxttopB></ButtonDeploy>
+            <ButtonDeploy onClick={() => window.location.href = "https://github.com/Gusstavolo/blackjackinreact" }><TxttopB>GitHub</TxttopB></ButtonDeploy>
+            <Picon className='IconJs' />
+          </ButtonsPdiv>
+        </SecTxtProjects>
+    </DivSecProjects>
+
+
+
+    <DivSecProjects>
+      <SecImgProjects>
         <ImgProjects className='imgA'  />
         
       </SecImgProjects>

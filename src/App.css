@@ -100,6 +100,10 @@
   background:url("./components/imgs/icons8-python-480.png");
   background-size: 100%;
 }
+.imgAA{
+  background:url("./components/imgs/dd2dd.gif");
+  background-size: 100%;
+}
 .imgA{
   background:url("./components/imgs/chgif.gif");
   background-size: 100%;
@@ -116,6 +120,7 @@
   background:url("./components/imgs/python.png");
   background-size: 100%;
 }
+
 
 @media (width < 1085px) {
  .MainPage{
